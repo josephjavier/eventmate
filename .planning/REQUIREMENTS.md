@@ -179,30 +179,94 @@
 
 ## Traceability
 
-*Populated during roadmap creation.*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 through AUTH-07 | — | Pending |
-| EVENT-01 through EVENT-04 | — | Pending |
-| COPL-01 through COPL-03 | — | Pending |
-| CHECK-01 through CHECK-07 | — | Pending |
-| BUDG-01 through BUDG-06 | — | Pending |
-| FILE-01 through FILE-04 | — | Pending |
-| DISC-01 through DISC-07 | — | Pending |
-| SUPP-01 through SUPP-04 | — | Pending |
-| BOOK-01 through BOOK-05 | — | Pending |
-| AINQ-01 through AINQ-07 | — | Pending |
-| RSVP-01 through RSVP-08 | — | Pending |
-| REVW-01 through REVW-04 | — | Pending |
-| NOTF-01 through NOTF-04 | — | Pending |
-| ADMIN-01 through ADMIN-05 | — | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 2 | Pending |
+| AUTH-06 | Phase 2 | Pending |
+| AUTH-07 | Phase 1 | Pending |
+| EVENT-01 | Phase 1 | Pending |
+| EVENT-02 | Phase 1 | Pending |
+| EVENT-03 | Phase 1 | Pending |
+| EVENT-04 | Phase 1 | Pending |
+| COPL-01 | Phase 1 | Pending |
+| COPL-02 | Phase 1 | Pending |
+| COPL-03 | Phase 1 | Pending |
+| CHECK-01 | Phase 1 | Pending |
+| CHECK-02 | Phase 1 | Pending |
+| CHECK-03 | Phase 1 | Pending |
+| CHECK-04 | Phase 1 | Pending |
+| CHECK-05 | Phase 1 | Pending |
+| CHECK-06 | Phase 1 | Pending |
+| CHECK-07 | Phase 1 | Pending |
+| BUDG-01 | Phase 1 | Pending |
+| BUDG-02 | Phase 1 | Pending |
+| BUDG-03 | Phase 1 | Pending |
+| BUDG-04 | Phase 1 | Pending |
+| BUDG-05 | Phase 1 | Pending |
+| BUDG-06 | Phase 1 | Pending |
+| FILE-01 | Phase 1 | Pending |
+| FILE-02 | Phase 1 | Pending |
+| FILE-03 | Phase 1 | Pending |
+| FILE-04 | Phase 1 | Pending |
+| DISC-01 | Phase 3 | Pending |
+| DISC-02 | Phase 3 | Pending |
+| DISC-03 | Phase 3 | Pending |
+| DISC-04 | Phase 3 | Pending |
+| DISC-05 | Phase 3 | Pending |
+| DISC-06 | Phase 3 | Pending |
+| DISC-07 | Phase 1 | Pending |
+| SUPP-01 | Phase 2 | Pending |
+| SUPP-02 | Phase 2 | Pending |
+| SUPP-03 | Phase 2 | Pending |
+| SUPP-04 | Phase 2 | Pending |
+| BOOK-01 | Phase 4 | Pending |
+| BOOK-02 | Phase 4 | Pending |
+| BOOK-03 | Phase 4 | Pending |
+| BOOK-04 | Phase 2 | Pending |
+| BOOK-05 | Phase 3 | Pending |
+| AINQ-01 | Phase 4 | Pending |
+| AINQ-02 | Phase 4 | Pending |
+| AINQ-03 | Phase 4 | Pending |
+| AINQ-04 | Phase 4 | Pending |
+| AINQ-05 | Phase 4 | Pending |
+| AINQ-06 | Phase 4 | Pending |
+| AINQ-07 | Phase 4 | Pending |
+| RSVP-01 | Phase 1 | Pending |
+| RSVP-02 | Phase 1 | Pending |
+| RSVP-03 | Phase 1 | Pending |
+| RSVP-04 | Phase 1 | Pending |
+| RSVP-05 | Phase 1 | Pending |
+| RSVP-06 | Phase 1 | Pending |
+| RSVP-07 | Phase 1 | Pending |
+| RSVP-08 | Phase 1 | Pending |
+| REVW-01 | Phase 5 | Pending |
+| REVW-02 | Phase 5 | Pending |
+| REVW-03 | Phase 5 | Pending |
+| REVW-04 | Phase 5 | Pending |
+| NOTF-01 | Phase 4 | Pending |
+| NOTF-02 | Phase 4 | Pending |
+| NOTF-03 | Phase 4 | Pending |
+| NOTF-04 | Phase 1 | Pending |
+| ADMIN-01 | Phase 2 | Pending |
+| ADMIN-02 | Phase 2 | Pending |
+| ADMIN-03 | Phase 2 | Pending |
+| ADMIN-04 | Phase 2 | Pending |
+| ADMIN-05 | Phase 2 | Pending |
 
 **Coverage:**
-- v1 requirements: 57 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 57 ⚠️
+- v1 requirements: 75 total (note: initial estimate of 57 was a count error)
+- Mapped to phases: 75/75
+- Phase 1 — Foundation & Planning Tools: AUTH-01–04, AUTH-07, EVENT-01–04, COPL-01–03, CHECK-01–07, BUDG-01–06, FILE-01–04, RSVP-01–08, DISC-07, NOTF-04 (39 requirements)
+- Phase 2 — Admin Panel & Supplier System: AUTH-05–06, ADMIN-01–05, SUPP-01–04, BOOK-04 (12 requirements)
+- Phase 3 — Supplier Discovery: DISC-01–06, BOOK-05 (7 requirements)
+- Phase 4 — Inquiry, AI & Booking: AINQ-01–07, BOOK-01–03, NOTF-01–03 (13 requirements)
+- Phase 5 — Reviews: REVW-01–04 (4 requirements)
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-11*
-*Last updated: 2026-06-11 after initial definition*
+*Last updated: 2026-06-11 — traceability populated after roadmap creation*
