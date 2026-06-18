@@ -52,7 +52,6 @@ All values are multiples of 4. This maps to Tailwind spacing utilities (`p-1` = 
 |---------|-------|--------|
 | Touch targets (RSVP public page) | 44px minimum height | Public page accessed on mobile phones; WCAG 2.5.5 |
 | File drop zone | 96px minimum height | Gives a clear drag target; matches react-dropzone convention |
-| Dashboard countdown hero number | 40px font-size | Single oversize number; not a heading role |
 
 ---
 
@@ -74,7 +73,7 @@ All values are multiples of 4. This maps to Tailwind spacing utilities (`p-1` = 
 | Body | 16px | 400 | 1.5 | `text-base font-normal` | Paragraphs, table cells, form helper text, descriptions |
 | Label | 14px | 600 | 1.4 | `text-sm font-semibold` | Form labels, table column headers, badge text, nav items |
 | Heading | 20px | 600 | 1.2 | `text-xl font-semibold` | Section headings, card titles, dialog headings |
-| Display | 28px | 600 | 1.1 | `text-3xl font-semibold` | Page-level titles (Dashboard, Checklist), dashboard countdown "X days" |
+| Display | 28px | 600 | 1.1 | `text-3xl font-semibold` | Page-level titles (Dashboard, Checklist), dashboard countdown number |
 
 > **Exactly 2 weights throughout the entire UI:** 400 (regular) and 600 (semibold).
 > Do not use 500 (medium) or 700 (bold) anywhere in Phase 1.
@@ -156,7 +155,7 @@ All color values below are the light-mode values (dark mode is not in scope for 
 | Location address placeholder | "Full address" |
 | Location role placeholder | "e.g., Church, Reception Hall, Prenup Venue" |
 | Add another location | "+ Add Location" |
-| Wizard next button | "Continue" |
+| Wizard Step 1 next button | "Continue to Location" |
 | Wizard final CTA | "Start Planning" |
 
 ### Checklist Page
@@ -180,7 +179,7 @@ All color values below are the light-mode values (dark mode is not in scope for 
 | Delete item confirmation heading | "Delete this item?" |
 | Delete item confirmation body | "This will permanently remove the item and any attached supplier details." |
 | Delete item confirm button | "Delete Item" |
-| Delete item cancel button | "Cancel" |
+| Delete item cancel button | "Keep Item" |
 
 ### Budget Page
 
@@ -348,7 +347,7 @@ Additional packages (npm, not shadcn registry):
 
 ### Countdown Widget
 - Display: "{N} days until your wedding"
-- Large number: 40px / 600 weight / Accent color (`#BE3C5E`)
+- Large number: 28px / 600 weight / Accent color (`#BE3C5E`) — Display size from Typography table
 - Label below: "days until your wedding" — Body size (16px / 400)
 - Must be `'use client'` component (hydration safety — RESEARCH.md Pitfall 6)
 - Pass `eventDate: Date` as prop from Server Component parent
@@ -443,6 +442,9 @@ Additional packages (npm, not shadcn registry):
 - Component: `'use client'` — never render in a Server Component (RESEARCH.md Pitfall 6)
 - If 0 days: "Today is your wedding day!"
 - If negative (event passed): "X days since your wedding"
+
+### Accessibility — Icon-Only Buttons
+- All icon-only action buttons (e.g., delete, edit, download in table rows and file cards) must include an `aria-label` matching the action text (e.g., `aria-label="Delete item"`, `aria-label="Download file"`).
 
 ---
 
