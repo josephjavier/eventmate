@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 1 Plan 03 complete
-last_updated: "2026-06-19T10:20:00.000Z"
-last_activity: 2026-06-19 — Phase 1 Plan 03 executed (DB types, 3 Supabase clients, DAL, middleware, currency/token utils)
+stopped_at: Phase 1 Plan 04 — checkpoint:human-action (Vercel deploy)
+last_updated: "2026-06-19T02:30:00.000Z"
+last_activity: 2026-06-19 — Phase 1 Plan 04 executed (auth, onboarding wizard, dashboard shell + countdown; awaiting Vercel deploy)
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 9
-  completed_plans: 3
-  percent: 7
+  completed_plans: 4
+  percent: 11
 ---
 
 # Project State
@@ -26,29 +26,29 @@ See: .planning/PROJECT.md (updated 2026-06-11)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Planning Tools)
-Plan: 4 of 9 in current phase
-Status: Executing
-Last activity: 2026-06-19 — Phase 1 Plan 03 executed (DB types generated, 3 Supabase clients, DAL with verifySession/assertRole, middleware, phpToCentavos/formatPHP, generateRsvpToken/isRsvpDeadlinePassed — 18 Wave-0 tests green)
+Plan: 5 of 9 in current phase
+Status: Executing (awaiting Vercel deploy checkpoint)
+Last activity: 2026-06-19 — Phase 1 Plan 04 executed (auth with RA 10173 consent, onboarding wizard with ceremony+reception, dashboard shell with countdown + SummaryWidgets; awaiting human: Vercel deploy + env vars)
 
-Progress: [███░░░░░░░] 7%
+Progress: [████░░░░░░] 11%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 3
-- Average duration: 45 minutes
-- Total execution time: 1.5 hours
+- Total plans completed: 4
+- Average duration: 49 minutes
+- Total execution time: 3.25 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 1 | 3 | 90 min | 30 min |
+| Phase 1 | 4 | 155 min | 39 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (61 min), 01-02 (developer-executed), 01-03 (29 min)
+- Last 5 plans: 01-01 (61 min), 01-02 (developer-executed), 01-03 (29 min), 01-04 (65 min)
 - Trend: —
 
 *Updated after each plan completion*
@@ -72,6 +72,7 @@ Key decisions affecting Phase 1 implementation:
 - 01-02: Co-planner access is full edit access (COPL-03 confirmed); user_can_access_event() grants access only when invitation status = 'accepted'
 - 01-02: Storage path convention — first path segment must always be event_id (enforced by RLS, documented in SQL comment for Wave 3/5/7 upload code)
 - 01-03: server-only import guard on lib/dal.ts prevents accidental client-side import; isRsvpDeadlinePassed uses UTC date string comparison to avoid timezone-sensitive arithmetic; deadline-day is inclusive (RSVP still open on the deadline day itself)
+- 01-04: shadcn form component created manually (CLI completed without error but wrote no file); Zod v4 uses .issues not .errors on ZodError; signUp redirects to /dashboard (not /onboarding) per D-01; CountdownWidget is 'use client' to avoid hydration mismatch (Pitfall 6)
 
 ### Pending Todos
 
@@ -92,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-19T10:20:00Z
-Stopped at: Completed Phase 1 Plan 03 (01-03-PLAN.md)
-Resume file: .planning/phases/01-foundation-planning-tools/01-04-PLAN.md
+Last session: 2026-06-19T02:30:00Z
+Stopped at: Phase 1 Plan 04 — checkpoint:human-action (Task 3: deploy to Vercel, set env vars, configure Supabase Auth URLs)
+Resume file: .planning/phases/01-foundation-planning-tools/01-04-PLAN.md (Task 3 deploy checkpoint — type "deployed" when live flow works)
