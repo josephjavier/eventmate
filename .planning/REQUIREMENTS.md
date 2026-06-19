@@ -15,7 +15,7 @@
 - [ ] **AUTH-04**: User can reset their password via an email link
 - [ ] **AUTH-05**: Supplier can log in with credentials provided by the admin
 - [ ] **AUTH-06**: Admin can log in to the admin panel with a separate admin account
-- [ ] **AUTH-07**: Guest can access the RSVP page via a shareable link without creating an account
+- [x] **AUTH-07**: Guest can access the RSVP page via a shareable link without creating an account
 
 ### Event Management (EVENT)
 
@@ -93,14 +93,14 @@
 
 ### Guest List & RSVP (RSVP)
 
-- [ ] **RSVP-01**: Client can add guests by name to the event guest list
-- [ ] **RSVP-02**: Client can mark any guest as having a +1 and record the +1's name
-- [ ] **RSVP-03**: Client can generate a shareable RSVP link for the event
-- [ ] **RSVP-04**: Guest can open the RSVP link, search their name (with a secondary disambiguating field for common Filipino names), and select Going / Not Going — no account required
-- [ ] **RSVP-05**: A guest with a +1 can enter the +1's name and RSVP response in the same flow
-- [ ] **RSVP-06**: Client can optionally enable meal preference collection per event; guests select their meal in the RSVP flow when enabled
-- [ ] **RSVP-07**: Client can view a live RSVP summary: total invited / confirmed / declined / pending
-- [ ] **RSVP-08**: Client can manually override any guest's RSVP status
+- [x] **RSVP-01**: Client can add guests by name to the event guest list
+- [x] **RSVP-02**: Client can mark any guest as having a +1 and record the +1's name
+- [x] **RSVP-03**: Client can generate a shareable RSVP link for the event
+- [x] **RSVP-04**: Guest can open the RSVP link, search their name (with a secondary disambiguating field for common Filipino names), and select Going / Not Going — no account required
+- [x] **RSVP-05**: A guest with a +1 can enter the +1's name and RSVP response in the same flow
+- [x] **RSVP-06**: Client can optionally enable meal preference collection per event; guests select their meal in the RSVP flow when enabled
+- [x] **RSVP-07**: Client can view a live RSVP summary: total invited / confirmed / declined / pending
+- [x] **RSVP-08**: Client can manually override any guest's RSVP status
 
 ### Supplier Reviews (REVW)
 

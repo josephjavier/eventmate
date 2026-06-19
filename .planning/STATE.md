@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 1 Plan 07 — complete
-last_updated: "2026-06-19T03:44:00.000Z"
-last_activity: 2026-06-19 — Phase 1 Plan 07 executed (file storage slice: fileMetaSchema, ACCEPTED_MIME/MAX_FILE_BYTES, saveFilePath/getSignedUrl/deleteFile Server Actions, FileDropzone with react-dropzone, FileGrid, FileCard with signed-URL download + delete dialog, files page)
+stopped_at: Phase 1 Plan 08 — complete
+last_updated: "2026-06-19T12:00:00.000Z"
+last_activity: 2026-06-19 — Phase 1 Plan 08 executed (guest list + public RSVP vertical slice: guestSchema, 7 Server Actions, guests dashboard page, GuestTable, AddGuestDialog, RsvpSummaryBar, GenerateLinkButton, RSVP search/respond Route Handlers, RSVPOpenPage, RSVPClosedPage, rsvp/[token]/page.tsx)
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 9
-  completed_plans: 6
-  percent: 20
+  completed_plans: 7
+  percent: 23
 ---
 
 # Project State
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-06-11)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Planning Tools)
-Plan: 8 of 9 in current phase
+Plan: 9 of 9 in current phase
 Status: Executing
-Last activity: 2026-06-19 — Phase 1 Plan 07 executed (file storage slice: fileMetaSchema, ACCEPTED_MIME/MAX_FILE_BYTES constants, saveFilePath/getSignedUrl/deleteFile Server Actions with service-role signed URLs, FileDropzone with react-dropzone + 10MB guard, FileGrid 3-col, FileCard with download + delete dialog, files page with assertRole)
+Last activity: 2026-06-19 — Phase 1 Plan 08 executed (guest list + public RSVP vertical slice: guestSchema, 7 Server Actions, guests dashboard page, GuestTable with TanStack Table, AddGuestDialog/EditGuestDialog, RsvpSummaryBar, GenerateLinkButton, AddGuestTrigger, RsvpDeadlineField, RSVP search/respond public Route Handlers, RSVPOpenPage with debounced search, RSVPClosedPage with event details/motif/attire photos)
 
 Progress: [██████░░░░] 20%
 
@@ -75,6 +75,7 @@ Key decisions affecting Phase 1 implementation:
 - 01-04: shadcn form component created manually (CLI completed without error but wrote no file); Zod v4 uses .issues not .errors on ZodError; signUp redirects to /dashboard (not /onboarding) per D-01; CountdownWidget is 'use client' to avoid hydration mismatch (Pitfall 6)
 - 01-05: Collapsible not pre-installed in Wave 0 — added via npx shadcn@latest add collapsible; AddItemTrigger needed as separate 'use client' wrapper to hold dialog state in Server Component page; offlineSupplierSchema includes contact_name field to match Wave-0 test spec
 - 01-06: SetBudgetTrigger + AddExpenseTrigger added as separate 'use client' wrappers (same pattern as AddItemTrigger in 01-05) to hold dialog state while keeping budget page.tsx a Server Component; per-category expense tracking deferred — expenses table has no category column in v1 schema (known stub: spentCentavos=0 per CategoryRow); isOverBudget() exported from lib/schemas/budget.ts (co-located with budget domain, not lib/utils.ts)
+- 01-08: z.input<typeof schema> used for react-hook-form form types (not z.infer) to resolve Zod v4 boolean.default() type incompatibility with zodResolver; AddGuestTrigger/EditGuestDialog added as 'use client' wrappers (same pattern as 01-05); RSVPOpenPage uses fetch() to Route Handlers (not Server Actions — public API requires no auth); D-08 notification email left as hook point comment in respond route — wired in Plan 01-09
 
 ### Pending Todos
 
@@ -95,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-19T11:29:00Z
-Stopped at: Phase 1 Plan 06 — complete (budget slice delivered)
-Resume file: .planning/phases/01-foundation-planning-tools/01-07-PLAN.md (next: file storage slice)
+Last session: 2026-06-19T12:00:00Z
+Stopped at: Phase 1 Plan 08 — complete (guest list + public RSVP slice delivered)
+Resume file: .planning/phases/01-foundation-planning-tools/01-09-PLAN.md (next: email notifications slice)

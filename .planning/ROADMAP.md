@@ -40,8 +40,8 @@ Plans:
 - [~] 01-04-PLAN.md — Auth + onboarding + dashboard shell + Vercel deploy (closes skeleton) (Wave 4) [2 of 3 tasks done — awaiting Vercel deploy checkpoint]
 - [x] 01-05-PLAN.md — Checklist slice: PH template, custom items, offline supplier (Wave 5)
 - [x] 01-06-PLAN.md — Budget slice: centavos tracking, allocation, over-budget alert (Wave 5)
-- [ ] 01-07-PLAN.md — File storage slice: private bucket, dropzone, signed URLs (Wave 5)
-- [ ] 01-08-PLAN.md — Guest list + public RSVP slice (Wave 5)
+- [x] 01-07-PLAN.md — File storage slice: private bucket, dropzone, signed URLs (Wave 5)
+- [x] 01-08-PLAN.md — Guest list + public RSVP slice (Wave 5)
 - [ ] 01-09-PLAN.md — Co-planner invite + RSVP notification email (Wave 6)
 **UI hint**: yes
 
@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Planning Tools | 6/9 (plan 04 partial — deploy checkpoint) | In Progress | - |
+| 1. Foundation & Planning Tools | 8/9 (plan 04 partial — deploy checkpoint) | In Progress | - |
 | 2. Admin Panel & Supplier System | 0/TBD | Not started | - |
 | 3. Supplier Discovery | 0/TBD | Not started | - |
 | 4. Inquiry, AI & Booking | 0/TBD | Not started | - |
