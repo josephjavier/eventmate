@@ -10,7 +10,6 @@
  *   - "Pending" (no response yet)
  */
 
-import { Badge } from "@/components/ui/badge";
 
 interface RsvpSummaryBarProps {
   invited: number;

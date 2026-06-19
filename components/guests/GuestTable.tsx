@@ -142,7 +142,7 @@ function DeleteConfirmDialog({
 
 const columnHelper = createColumnHelper<GuestRow>();
 
-export function GuestTable({ guests, eventId }: GuestTableProps) {
+export function GuestTable({ guests }: GuestTableProps) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [editTarget, setEditTarget] = useState<GuestRow | null>(null);

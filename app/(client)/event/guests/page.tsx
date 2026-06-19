@@ -81,7 +81,7 @@ export default async function GuestsPage() {
   // Join via guest_id to get status + responded_at
   const guestIds = guestList.map((g) => g.id);
 
-  let rsvpMap: Record<
+  const rsvpMap: Record<
     string,
     { status: string; responded_at: string }
   > = {};
