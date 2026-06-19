@@ -26,9 +26,11 @@
 
 ### Co-Planner / Partner Access (COPL)
 
-- [ ] **COPL-01**: Client can invite a partner/co-planner by email to share the event
-- [ ] **COPL-02**: Invited co-planner receives an email invitation and can accept to gain access
-- [ ] **COPL-03**: Co-planner has full edit access to the shared event (checklist, budget, guests, files)
+> **Deferred to v2.** v1 supports a single planner only. Guests RSVP via a shared link (no email invites to guests). Co-planner collaboration moves to v2.
+
+- [-] **COPL-01**: Client can invite a partner/co-planner by email to share the event *(deferred to v2)*
+- [-] **COPL-02**: Invited co-planner receives an email invitation and can accept to gain access *(deferred to v2)*
+- [-] **COPL-03**: Co-planner has full edit access to the shared event (checklist, budget, guests, files) *(deferred to v2)*
 
 ### Checklist (CHECK)
 
@@ -114,7 +116,7 @@
 - [ ] **NOTF-01**: Client receives an email when a supplier confirms their booking
 - [ ] **NOTF-02**: Client receives an email when a supplier marks their inquiry as Not Available
 - [ ] **NOTF-03**: Supplier receives an email when a new client inquiry arrives
-- [ ] **NOTF-04**: Invited co-planner receives an email invitation with a link to join the event
+- [-] **NOTF-04**: Invited co-planner receives an email invitation with a link to join the event *(deferred to v2 with COPL)*
 
 ### Admin Panel (ADMIN)
 
@@ -192,9 +194,9 @@
 | EVENT-02 | Phase 1 | Pending |
 | EVENT-03 | Phase 1 | Pending |
 | EVENT-04 | Phase 1 | Pending |
-| COPL-01 | Phase 1 | Pending |
-| COPL-02 | Phase 1 | Pending |
-| COPL-03 | Phase 1 | Pending |
+| COPL-01 | v2 | Deferred |
+| COPL-02 | v2 | Deferred |
+| COPL-03 | v2 | Deferred |
 | CHECK-01 | Phase 1 | Pending |
 | CHECK-02 | Phase 1 | Pending |
 | CHECK-03 | Phase 1 | Pending |
@@ -250,7 +252,7 @@
 | NOTF-01 | Phase 4 | Pending |
 | NOTF-02 | Phase 4 | Pending |
 | NOTF-03 | Phase 4 | Pending |
-| NOTF-04 | Phase 1 | Pending |
+| NOTF-04 | v2 | Deferred |
 | ADMIN-01 | Phase 2 | Pending |
 | ADMIN-02 | Phase 2 | Pending |
 | ADMIN-03 | Phase 2 | Pending |
@@ -260,7 +262,7 @@
 **Coverage:**
 - v1 requirements: 75 total (note: initial estimate of 57 was a count error)
 - Mapped to phases: 75/75
-- Phase 1 — Foundation & Planning Tools: AUTH-01–04, AUTH-07, EVENT-01–04, COPL-01–03, CHECK-01–07, BUDG-01–06, FILE-01–04, RSVP-01–08, DISC-07, NOTF-04 (39 requirements)
+- Phase 1 — Foundation & Planning Tools: AUTH-01–04, AUTH-07, EVENT-01–04, CHECK-01–07, BUDG-01–06, FILE-01–04, RSVP-01–08, DISC-07 (35 requirements)
 - Phase 2 — Admin Panel & Supplier System: AUTH-05–06, ADMIN-01–05, SUPP-01–04, BOOK-04 (12 requirements)
 - Phase 3 — Supplier Discovery: DISC-01–06, BOOK-05 (7 requirements)
 - Phase 4 — Inquiry, AI & Booking: AINQ-01–07, BOOK-01–03, NOTF-01–03 (13 requirements)

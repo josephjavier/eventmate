@@ -18,7 +18,6 @@
  * T-1-14: Deadline gate enforced via isRsvpDeadlinePassed.
  *
  * D-07: responded_at = now() on every upsert.
- * D-08: RSVP notification email hook point — wired in Plan 01-09.
  */
 
 import { NextRequest, NextResponse } from "next/server";
@@ -128,10 +127,6 @@ export async function POST(
   if (upsertError) {
     return NextResponse.json({ error: upsertError.message }, { status: 500 });
   }
-
-  // D-08: RSVP notification email — implemented in Plan 01-09
-  // Hook point: after successful upsert, send notification to event owner
-  // import { sendRsvpNotification } from '@/lib/notifications' — Plan 01-09 wires this
 
   return NextResponse.json({ ok: true });
 }

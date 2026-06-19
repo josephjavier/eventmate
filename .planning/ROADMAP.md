@@ -24,7 +24,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Goal**: A couple can fully plan their wedding — checklist, budget, guests, and files — before any platform supplier is onboarded
 **Mode:** mvp
 **Depends on**: Nothing (first phase)
-**Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-07, EVENT-01, EVENT-02, EVENT-03, EVENT-04, COPL-01, COPL-02, COPL-03, CHECK-01, CHECK-02, CHECK-03, CHECK-04, CHECK-05, CHECK-06, CHECK-07, BUDG-01, BUDG-02, BUDG-03, BUDG-04, BUDG-05, BUDG-06, FILE-01, FILE-02, FILE-03, FILE-04, RSVP-01, RSVP-02, RSVP-03, RSVP-04, RSVP-05, RSVP-06, RSVP-07, RSVP-08, DISC-07, NOTF-04
+**Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-07, EVENT-01, EVENT-02, EVENT-03, EVENT-04, CHECK-01, CHECK-02, CHECK-03, CHECK-04, CHECK-05, CHECK-06, CHECK-07, BUDG-01, BUDG-02, BUDG-03, BUDG-04, BUDG-05, BUDG-06, FILE-01, FILE-02, FILE-03, FILE-04, RSVP-01, RSVP-02, RSVP-03, RSVP-04, RSVP-05, RSVP-06, RSVP-07, RSVP-08, DISC-07
 **Success Criteria** (what must be TRUE):
   1. A couple can register, create their wedding event with a date, time, and multiple locations (ceremony, reception), and see a live countdown dashboard with checklist completion percentage and budget summary
   2. Couple can work through a pre-built Philippine wedding checklist, add or remove custom items, and attach an offline supplier (found via Facebook or referrals) to any checklist item — the app delivers full planning value before any platform supplier is onboarded
@@ -42,7 +42,7 @@ Plans:
 - [x] 01-06-PLAN.md — Budget slice: centavos tracking, allocation, over-budget alert (Wave 5)
 - [x] 01-07-PLAN.md — File storage slice: private bucket, dropzone, signed URLs (Wave 5)
 - [x] 01-08-PLAN.md — Guest list + public RSVP slice (Wave 5)
-- [ ] 01-09-PLAN.md — Co-planner invite + RSVP notification email (Wave 6)
+- [-] 01-09-PLAN.md — Co-planner invite + RSVP notification email (Wave 6) [DEFERRED to v2 — single-planner only in v1; guests RSVP via shared link, no email notifications needed]
 **UI hint**: yes
 
 ### Phase 2: Admin Panel & Supplier System
@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Planning Tools | 8/9 (plan 04 partial — deploy checkpoint) | In Progress | - |
+| 1. Foundation & Planning Tools | 8/8 (plan 09 deferred to v2) | Complete | 2026-06-19 |
 | 2. Admin Panel & Supplier System | 0/TBD | Not started | - |
 | 3. Supplier Discovery | 0/TBD | Not started | - |
 | 4. Inquiry, AI & Booking | 0/TBD | Not started | - |

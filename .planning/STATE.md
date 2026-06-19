@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Phase 1 Plan 08 — complete
-last_updated: "2026-06-19T12:00:00.000Z"
-last_activity: 2026-06-19 — Phase 1 Plan 08 executed (guest list + public RSVP vertical slice: guestSchema, 7 Server Actions, guests dashboard page, GuestTable, AddGuestDialog, RsvpSummaryBar, GenerateLinkButton, RSVP search/respond Route Handlers, RSVPOpenPage, RSVPClosedPage, rsvp/[token]/page.tsx)
+status: phase_complete
+stopped_at: Phase 1 — complete (plan 09 deferred to v2)
+last_updated: "2026-06-19T12:30:00.000Z"
+last_activity: 2026-06-19 — Phase 1 complete. Plan 08 delivered guest list + public RSVP. Plan 09 (co-planner + RSVP email notifications) deferred to v2 — v1 is single-planner only; guests RSVP via shared link sent through Facebook/messaging, no email notifications needed.
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 9
-  completed_plans: 7
-  percent: 23
+  completed_phases: 1
+  total_plans: 8
+  completed_plans: 8
+  percent: 20
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-11)
 
 **Core value:** A couple planning their wedding should never need to leave the app — every supplier, every peso, every guest, and every contract lives in one place.
-**Current focus:** Phase 1 — Foundation & Planning Tools
+**Current focus:** Phase 1 complete — ready for Phase 2 (Admin Panel & Supplier System)
 
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Planning Tools)
-Plan: 9 of 9 in current phase
-Status: Executing
-Last activity: 2026-06-19 — Phase 1 Plan 08 executed (guest list + public RSVP vertical slice: guestSchema, 7 Server Actions, guests dashboard page, GuestTable with TanStack Table, AddGuestDialog/EditGuestDialog, RsvpSummaryBar, GenerateLinkButton, AddGuestTrigger, RsvpDeadlineField, RSVP search/respond public Route Handlers, RSVPOpenPage with debounced search, RSVPClosedPage with event details/motif/attire photos)
+Plan: 8 of 8 in Phase 1 (plan 09 deferred to v2)
+Status: Phase 1 Complete
+Last activity: 2026-06-19 — Phase 1 complete. Plan 09 (co-planner invite + RSVP notification email) deferred to v2. Decision: v1 is single-planner only; guests RSVP via shared link sent over Facebook/messaging apps — no email needed.
 
 Progress: [██████░░░░] 20%
 
@@ -75,7 +75,8 @@ Key decisions affecting Phase 1 implementation:
 - 01-04: shadcn form component created manually (CLI completed without error but wrote no file); Zod v4 uses .issues not .errors on ZodError; signUp redirects to /dashboard (not /onboarding) per D-01; CountdownWidget is 'use client' to avoid hydration mismatch (Pitfall 6)
 - 01-05: Collapsible not pre-installed in Wave 0 — added via npx shadcn@latest add collapsible; AddItemTrigger needed as separate 'use client' wrapper to hold dialog state in Server Component page; offlineSupplierSchema includes contact_name field to match Wave-0 test spec
 - 01-06: SetBudgetTrigger + AddExpenseTrigger added as separate 'use client' wrappers (same pattern as AddItemTrigger in 01-05) to hold dialog state while keeping budget page.tsx a Server Component; per-category expense tracking deferred — expenses table has no category column in v1 schema (known stub: spentCentavos=0 per CategoryRow); isOverBudget() exported from lib/schemas/budget.ts (co-located with budget domain, not lib/utils.ts)
-- 01-08: z.input<typeof schema> used for react-hook-form form types (not z.infer) to resolve Zod v4 boolean.default() type incompatibility with zodResolver; AddGuestTrigger/EditGuestDialog added as 'use client' wrappers (same pattern as 01-05); RSVPOpenPage uses fetch() to Route Handlers (not Server Actions — public API requires no auth); D-08 notification email left as hook point comment in respond route — wired in Plan 01-09
+- 01-08: z.input<typeof schema> used for react-hook-form form types (not z.infer) to resolve Zod v4 boolean.default() type incompatibility with zodResolver; AddGuestTrigger/EditGuestDialog added as 'use client' wrappers (same pattern as 01-05); RSVPOpenPage uses fetch() to Route Handlers (not Server Actions — public API requires no auth)
+- v1 product decision: single-planner only (no co-planner); RSVP invitation shared via Facebook/messaging as a link (no email to guests); couple checks RSVP status on the dashboard — no notification emails needed in v1. COPL-01/02/03 and NOTF-04 deferred to v2.
 
 ### Pending Todos
 
@@ -83,7 +84,6 @@ None yet.
 
 ### Blockers/Concerns
 
-- Pre-Phase 1: Co-planner full-vs-read-only access model needs a product decision before DB schema is written (COPL-03 says "full edit access" — confirm this is correct)
 - Pre-Phase 2: Verify Gemini 2.0 Flash free-tier rate limits at ai.google.dev before writing rate-limiter thresholds
 - Pre-Phase 4: Validate Vercel streaming timeout with a real Gemini call before building the full chat UI
 - Pre-launch: Philippine DPA (RA 10173) NPC registration requirement needs verification for solo/early-stage developers
@@ -92,10 +92,10 @@ None yet.
 
 | Category | Item | Status | Deferred At |
 |----------|------|--------|-------------|
-| *(none)* | | | |
+| Co-planner | COPL-01/02/03 + NOTF-04 — invite partner by email, accept flow, shared access | Deferred to v2 | 2026-06-19 |
 
 ## Session Continuity
 
-Last session: 2026-06-19T12:00:00Z
-Stopped at: Phase 1 Plan 08 — complete (guest list + public RSVP slice delivered)
-Resume file: .planning/phases/01-foundation-planning-tools/01-09-PLAN.md (next: email notifications slice)
+Last session: 2026-06-19T12:30:00Z
+Stopped at: Phase 1 — complete
+Resume file: Phase 2 planning — /gsd:discuss-phase 2 or /gsd:plan-phase 2
