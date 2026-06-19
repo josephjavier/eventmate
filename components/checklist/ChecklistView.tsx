@@ -137,7 +137,6 @@ function CategoryGroup({
   catDone,
   catTotal,
   catPercent,
-  eventId,
   onAddItem,
 }: CategoryGroupProps) {
   const [isOpen, setIsOpen] = useState(true)

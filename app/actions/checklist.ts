@@ -157,7 +157,7 @@ export async function addItem(formData: FormData) {
  * CHECK-02: Client can rename a custom item.
  */
 export async function renameItem(itemId: string, title: string) {
-  const user = await verifySession()
+  await verifySession()
   const supabase = await createClient()
 
   if (!title || title.trim() === "") {
@@ -185,7 +185,7 @@ export async function renameItem(itemId: string, title: string) {
  * CHECK-03: Client can delete any item freely (D-14 — nothing is locked).
  */
 export async function deleteItem(itemId: string) {
-  const user = await verifySession()
+  await verifySession()
   const supabase = await createClient()
 
   // RLS policy on checklist_items ensures user can only delete their own event items
@@ -214,7 +214,7 @@ export async function updateStatus(
   itemId: string,
   status: string
 ) {
-  const user = await verifySession()
+  await verifySession()
   const supabase = await createClient()
 
   // Fetch the item to determine item_type for status validation (T-1-10)
@@ -276,7 +276,7 @@ export async function attachOfflineSupplier(
     notes?: string
   }
 ) {
-  const user = await verifySession()
+  await verifySession()
   const supabase = await createClient()
 
   // Server-side validation (T-1-08)

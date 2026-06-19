@@ -204,7 +204,7 @@ export async function updateExpense(
     checklist_item_id?: string;
   }
 ) {
-  const user = await verifySession();
+  await verifySession();
   const supabase = await createClient();
 
   // Fetch current expense to get base values for partial update
@@ -260,7 +260,7 @@ export async function updateExpense(
  * (ON DELETE CASCADE on the FK handles receipt_files cleanup).
  */
 export async function deleteExpense(expenseId: string) {
-  const user = await verifySession();
+  await verifySession();
   const supabase = await createClient();
 
   // RLS on expenses enforces event access
@@ -292,7 +292,7 @@ export async function attachReceipt(
   fileName: string,
   mimeType: string
 ) {
-  const user = await verifySession();
+  await verifySession();
   const supabase = await createClient();
 
   // T-1-11: Server-side MIME validation — reject anything outside pdf/jpeg/png

@@ -29,7 +29,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { CurrencyInput } from "@/components/budget/CurrencyInput";
 import { createClient } from "@/lib/supabase/client";
-import { createExpense, attachReceipt } from "@/app/actions/budget";
+import { createExpense } from "@/app/actions/budget";
 import { centavosToPhp } from "@/lib/utils";
 import { toast } from "sonner";
 import { Upload } from "lucide-react";

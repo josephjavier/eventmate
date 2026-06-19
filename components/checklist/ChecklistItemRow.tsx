@@ -72,19 +72,6 @@ function SupplierStatusBadge({ status }: { status: string }) {
   return <Badge variant="outline">Pending</Badge>
 }
 
-function PersonalStatusBadge({ status }: { status: string }) {
-  if (status === "done") {
-    return (
-      <Badge
-        className="bg-[#BE3C5E] text-white border-transparent hover:bg-[#BE3C5E]"
-      >
-        Done
-      </Badge>
-    )
-  }
-  return <Badge variant="outline">Pending</Badge>
-}
-
 // ─── Next status in supplier cycle ───────────────────────────────────────────
 
 function nextSupplierStatus(current: string): string {

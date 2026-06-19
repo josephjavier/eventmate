@@ -21,7 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { CurrencyInput } from "@/components/budget/CurrencyInput";
 import { upsertCategory } from "@/app/actions/budget";
-import { centavosToPhp, phpToCentavos } from "@/lib/utils";
+import { centavosToPhp } from "@/lib/utils";
 import { toast } from "sonner";
 
 interface CategoryAllocationDialogProps {

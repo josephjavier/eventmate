@@ -20,7 +20,7 @@
  */
 
 import { useState } from "react";
-import { Download, Trash2, FileText, Image, File } from "lucide-react";
+import { Download, Trash2, FileText, Image as ImageIcon, File } from "lucide-react";
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
@@ -50,7 +50,7 @@ function FileIcon({ mimeType }: { mimeType: string | null }) {
     return <FileText className="h-8 w-8 text-red-500 shrink-0" />;
   }
   if (mimeType === "image/jpeg" || mimeType === "image/png") {
-    return <Image className="h-8 w-8 text-blue-500 shrink-0" />;
+    return <ImageIcon className="h-8 w-8 text-blue-500 shrink-0" />;
   }
   return <File className="h-8 w-8 text-muted-foreground shrink-0" />;
 }

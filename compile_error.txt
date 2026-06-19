@@ -1,0 +1,26 @@
+Failed to compile.
+./app/actions/budget.ts
+207:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+263:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+295:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+./app/actions/checklist.ts
+160:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+188:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+217:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+279:9  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+./components/budget/CategoryAllocationDialog.tsx
+24:25  Error: 'phpToCentavos' is defined but never used.  @typescript-eslint/no-unused-vars
+./components/budget/CurrencyInput.tsx
+74:10  Error: 'isFocused' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+./components/budget/ExpenseDialog.tsx
+32:25  Error: 'attachReceipt' is defined but never used.  @typescript-eslint/no-unused-vars
+./components/checklist/ChecklistItemRow.tsx
+75:10  Error: 'PersonalStatusBadge' is defined but never used.  @typescript-eslint/no-unused-vars
+./components/checklist/ChecklistView.tsx
+140:3  Error: 'eventId' is defined but never used.  @typescript-eslint/no-unused-vars
+./components/files/FileCard.tsx
+53:12  Warning: Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+./components/files/FileDropzone.tsx
+41:10  Error: 'ACCEPTED_MIME' is defined but never used.  @typescript-eslint/no-unused-vars
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+Error: Command "npm run build" exited with 1

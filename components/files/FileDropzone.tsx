@@ -38,7 +38,7 @@ import { toast } from "sonner";
 import { UploadCloud } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { saveFilePath } from "@/app/actions/files";
-import { ACCEPTED_MIME, MAX_FILE_BYTES } from "@/lib/schemas/file";
+import { MAX_FILE_BYTES } from "@/lib/schemas/file";
 
 interface FileDropzoneProps {
   eventId: string;

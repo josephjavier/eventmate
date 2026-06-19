@@ -71,19 +71,16 @@ export function CurrencyInput({
   const [displayValue, setDisplayValue] = useState<string>(
     value !== undefined && value > 0 ? formatDisplayValue(value) : ""
   );
-  const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // When focused, show the raw numeric value so the user can edit easily
   const handleFocus = () => {
-    setIsFocused(true);
     const raw = parseRawInput(displayValue);
     // Show raw number (without formatting) so caret position is predictable
     setDisplayValue(raw > 0 ? String(raw) : "");
   };
 
   const handleBlur = () => {
-    setIsFocused(false);
     const phpAmount = parseRawInput(displayValue);
     // Reformat on blur for display
     setDisplayValue(phpAmount > 0 ? formatDisplayValue(phpAmount) : "");
