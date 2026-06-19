@@ -31,7 +31,18 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Couple can set a total budget, allocate amounts per checklist category, enter deposit paid and remaining balance per supplier expense, and see a visual alert when any category exceeds its allocated amount
   4. Couple can upload contracts, receipts, and quotations (PDF, JPG, PNG) tagged to a supplier or checklist item, and download any uploaded file at any time
   5. A guest opens a shareable RSVP link without creating an account, searches their name, and responds Going or Not Going; the couple sees a live RSVP summary and can manually override any guest's status
-**Plans**: TBD
+**Plans**: 9 plans (Walking Skeleton Waves 1-4, feature slices Waves 5-6)
+
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold, dependencies, Vitest harness (Wave 1)
+- [ ] 01-02-PLAN.md — DB schema + RLS migration + schema push (Wave 2)
+- [ ] 01-03-PLAN.md — Core library: Supabase clients, DAL, currency/token utils, middleware (Wave 3)
+- [ ] 01-04-PLAN.md — Auth + onboarding + dashboard shell + Vercel deploy (closes skeleton) (Wave 4)
+- [ ] 01-05-PLAN.md — Checklist slice: PH template, custom items, offline supplier (Wave 5)
+- [ ] 01-06-PLAN.md — Budget slice: centavos tracking, allocation, over-budget alert (Wave 5)
+- [ ] 01-07-PLAN.md — File storage slice: private bucket, dropzone, signed URLs (Wave 5)
+- [ ] 01-08-PLAN.md — Guest list + public RSVP slice (Wave 5)
+- [ ] 01-09-PLAN.md — Co-planner invite + RSVP notification email (Wave 6)
 **UI hint**: yes
 
 ### Phase 2: Admin Panel & Supplier System
@@ -92,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Planning Tools | 0/TBD | Not started | - |
+| 1. Foundation & Planning Tools | 0/9 | Planned | - |
 | 2. Admin Panel & Supplier System | 0/TBD | Not started | - |
 | 3. Supplier Discovery | 0/TBD | Not started | - |
 | 4. Inquiry, AI & Booking | 0/TBD | Not started | - |

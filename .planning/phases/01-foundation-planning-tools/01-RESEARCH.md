@@ -1032,7 +1032,7 @@ await resend.emails.send({
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Zod v4 API confirmation**
    - What we know: `npm view zod version` returns 4.4.3. The package exists and is current.
