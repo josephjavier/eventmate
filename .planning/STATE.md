@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 1 Plan 05 — complete
-last_updated: "2026-06-19T03:18:00.000Z"
-last_activity: 2026-06-19 — Phase 1 Plan 05 executed (checklist slice: PH template, offline supplier, Server Actions, page + components)
+stopped_at: Phase 1 Plan 06 — complete
+last_updated: "2026-06-19T11:29:00.000Z"
+last_activity: 2026-06-19 — Phase 1 Plan 06 executed (budget slice: schemas, Server Actions, CurrencyInput, BudgetSummary, CategoryList, CategoryAllocationDialog, ExpenseDialog, budget page)
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 9
-  completed_plans: 5
-  percent: 17
+  completed_plans: 6
+  percent: 20
 ---
 
 # Project State
@@ -26,29 +26,29 @@ See: .planning/PROJECT.md (updated 2026-06-11)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Planning Tools)
-Plan: 6 of 9 in current phase
+Plan: 7 of 9 in current phase
 Status: Executing
-Last activity: 2026-06-19 — Phase 1 Plan 05 executed (checklist slice: PH template constant, offline supplier schema + validation, 6 Server Actions, checklist page + ChecklistView + ChecklistItemRow + AddItemDialog + OfflineSupplierDialog + AddItemTrigger)
+Last activity: 2026-06-19 — Phase 1 Plan 06 executed (budget slice: Zod schemas, 6 Server Actions, CurrencyInput, BudgetSummary, CategoryList + over-budget badge, CategoryAllocationDialog, ExpenseDialog with react-dropzone receipt, budget page with 4-stat summary)
 
-Progress: [█████░░░░░] 17%
+Progress: [██████░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 4
-- Average duration: 49 minutes
-- Total execution time: 3.25 hours
+- Total plans completed: 5
+- Average duration: 34 minutes
+- Total execution time: 3.45 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| Phase 1 | 5 | 162 min | 32 min |
+| Phase 1 | 6 | 168 min | 28 min |
 
 **Recent Trend:**
 
-- Last 5 plans: 01-01 (61 min), 01-02 (developer-executed), 01-03 (29 min), 01-04 (65 min), 01-05 (7 min)
+- Last 5 plans: 01-02 (developer-executed), 01-03 (29 min), 01-04 (65 min), 01-05 (7 min), 01-06 (6 min)
 - Trend: improving (smaller scoped plans executing faster)
 
 *Updated after each plan completion*
@@ -74,6 +74,7 @@ Key decisions affecting Phase 1 implementation:
 - 01-03: server-only import guard on lib/dal.ts prevents accidental client-side import; isRsvpDeadlinePassed uses UTC date string comparison to avoid timezone-sensitive arithmetic; deadline-day is inclusive (RSVP still open on the deadline day itself)
 - 01-04: shadcn form component created manually (CLI completed without error but wrote no file); Zod v4 uses .issues not .errors on ZodError; signUp redirects to /dashboard (not /onboarding) per D-01; CountdownWidget is 'use client' to avoid hydration mismatch (Pitfall 6)
 - 01-05: Collapsible not pre-installed in Wave 0 — added via npx shadcn@latest add collapsible; AddItemTrigger needed as separate 'use client' wrapper to hold dialog state in Server Component page; offlineSupplierSchema includes contact_name field to match Wave-0 test spec
+- 01-06: SetBudgetTrigger + AddExpenseTrigger added as separate 'use client' wrappers (same pattern as AddItemTrigger in 01-05) to hold dialog state while keeping budget page.tsx a Server Component; per-category expense tracking deferred — expenses table has no category column in v1 schema (known stub: spentCentavos=0 per CategoryRow); isOverBudget() exported from lib/schemas/budget.ts (co-located with budget domain, not lib/utils.ts)
 
 ### Pending Todos
 
@@ -94,6 +95,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-19T03:18:00Z
-Stopped at: Phase 1 Plan 05 — complete (checklist slice delivered)
-Resume file: .planning/phases/01-foundation-planning-tools/01-06-PLAN.md (next: budget slice)
+Last session: 2026-06-19T11:29:00Z
+Stopped at: Phase 1 Plan 06 — complete (budget slice delivered)
+Resume file: .planning/phases/01-foundation-planning-tools/01-07-PLAN.md (next: file storage slice)
