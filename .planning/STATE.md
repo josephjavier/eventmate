@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planned
-stopped_at: Phase 1 planned (9 plans, 6 waves)
-last_updated: "2026-06-18T00:00:00.000Z"
-last_activity: 2026-06-18 — Phase 1 planned (9 plans in 6 waves, verification passed)
+status: executing
+stopped_at: Phase 1 Plan 01 complete
+last_updated: "2026-06-19T00:00:00.000Z"
+last_activity: 2026-06-19 — Phase 1 Plan 01 executed (Next.js scaffold + Vitest harness)
 progress:
   total_phases: 5
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 9
+  completed_plans: 1
+  percent: 2
 ---
 
 # Project State
@@ -26,29 +26,29 @@ See: .planning/PROJECT.md (updated 2026-06-11)
 ## Current Position
 
 Phase: 1 of 5 (Foundation & Planning Tools)
-Plan: 0 of 9 in current phase
-Status: Ready to execute
-Last activity: 2026-06-18 — Phase 1 planned (9 plans in 6 waves, verification passed)
+Plan: 1 of 9 in current phase
+Status: Executing
+Last activity: 2026-06-19 — Phase 1 Plan 01 executed (Next.js 15.3.9 scaffold + Vitest harness)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█░░░░░░░░░] 2%
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: 0 hours
+- Total plans completed: 1
+- Average duration: 61 minutes
+- Total execution time: 1.0 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| Phase 1 | 1 | 61 min | 61 min |
 
 **Recent Trend:**
 
-- Last 5 plans: —
+- Last 5 plans: 01-01 (61 min)
 - Trend: —
 
 *Updated after each plan completion*
@@ -66,6 +66,9 @@ Key decisions affecting Phase 1 implementation:
 - RSVP token is nanoid(20) — set in schema migration, not application code
 - Phase 4: AI uses Vercel AI SDK streamText() in a Route Handler — never a blocking Server Action (Vercel 10s timeout)
 - Phase 4: Booking confirmation via atomic PostgreSQL RPC function — prevents double-booking race condition
+- 01-01: shadcn nova preset selected; stone manually set in components.json (--base-color flag not available in current CLI)
+- 01-01: tsconfig.json excludes tests/ — Wave-0 tests intentionally import not-yet-created modules
+- 01-01: @react-email/components@1.0.12 deprecated; Plan 01-05/01-06 must upgrade to react-email@6+
 
 ### Pending Todos
 
@@ -86,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-06-11T08:32:35.298Z
-Stopped at: Phase 1 context gathered
-Resume file: .planning/phases/01-foundation-planning-tools/01-CONTEXT.md
+Last session: 2026-06-19T00:08:56Z
+Stopped at: Completed Phase 1 Plan 01 (01-01-PLAN.md)
+Resume file: .planning/phases/01-foundation-planning-tools/01-02-PLAN.md

@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 9 plans (Walking Skeleton Waves 1-4, feature slices Waves 5-6)
 
 Plans:
-- [ ] 01-01-PLAN.md — Project scaffold, dependencies, Vitest harness (Wave 1)
+- [x] 01-01-PLAN.md — Project scaffold, dependencies, Vitest harness (Wave 1)
 - [ ] 01-02-PLAN.md — DB schema + RLS migration + schema push (Wave 2)
 - [ ] 01-03-PLAN.md — Core library: Supabase clients, DAL, currency/token utils, middleware (Wave 3)
 - [ ] 01-04-PLAN.md — Auth + onboarding + dashboard shell + Vercel deploy (closes skeleton) (Wave 4)
@@ -103,7 +103,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Planning Tools | 0/9 | Planned | - |
+| 1. Foundation & Planning Tools | 1/9 | In Progress | - |
 | 2. Admin Panel & Supplier System | 0/TBD | Not started | - |
 | 3. Supplier Discovery | 0/TBD | Not started | - |
 | 4. Inquiry, AI & Booking | 0/TBD | Not started | - |
