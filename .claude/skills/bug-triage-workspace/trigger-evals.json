@@ -1,0 +1,22 @@
+[
+  { "query": "the onboarding e2e is red again — waitForURL times out but i can't tell why, it was passing yesterday", "should_trigger": true },
+  { "query": "createEvent throws 'new row violates row-level security policy for table events' even though the user is logged in, wtf", "should_trigger": true },
+  { "query": "npm run test:api passes on my machine but the guests spec fails on the runner, only sometimes", "should_trigger": true },
+  { "query": "why is the RSVP respond route returning 403 for a guest that definitely exists on the event", "should_trigger": true },
+  { "query": "the budget page shows 0 committed even though I added expenses — the query looks fine but something's off", "should_trigger": true },
+  { "query": "my playwright test fails with a useless error, just 'Test timeout of 30000ms exceeded'", "should_trigger": true },
+  { "query": "supabase update on events silently affects 0 rows and doesn't error, users say their edits don't save", "should_trigger": true },
+  { "query": "the dashboard countdown doesn't render for one specific user but works for everyone else, nothing in the console", "should_trigger": true },
+  { "query": "vitest says currency.test is failing after my centavos refactor, not sure if the test or the code is wrong", "should_trigger": true },
+  { "query": "checklist server action started inserting as anon somehow — here's the 42501 error it returns", "should_trigger": true },
+  { "query": "add an e2e test covering the supplier discovery filters", "should_trigger": false },
+  { "query": "set up a new page object for the budget page", "should_trigger": false },
+  { "query": "explain how Supabase RLS WITH CHECK differs from USING", "should_trigger": false },
+  { "query": "review my diff on the guests server action for security issues", "should_trigger": false },
+  { "query": "createEvent works but it does two round trips now — can we make it one?", "should_trigger": false },
+  { "query": "write the migration to add a reviews table with RLS policies", "should_trigger": false },
+  { "query": "deploy the app to Vercel and set the env vars", "should_trigger": false },
+  { "query": "our Supabase project keeps pausing — add the keep-alive cron", "should_trigger": false },
+  { "query": "generate 20 seed guests for the RSVP fixtures", "should_trigger": false },
+  { "query": "what's the difference between getUser and getSession in @supabase/ssr?", "should_trigger": false }
+]
