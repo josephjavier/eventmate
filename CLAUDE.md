@@ -37,6 +37,20 @@ These were decided during planning and must not be changed without explicit disc
 7. **Service role key is never `NEXT_PUBLIC_`** — server-only, never exposed to the browser.
 8. **RSVP page at `app/rsvp/[token]/`** — outside all auth route groups. Token is the authorization.
 
+## Testing
+
+Two separate runners, two separate directories — never mix them:
+
+- **Unit (Vitest)** — `tests/`. Schemas, utils, pure logic. `npm test`.
+- **E2E + API (Playwright)** — `e2e/`. Browser journeys + Route-Handler API tests. `npm run test:e2e` / `npm run test:api`.
+
+**E2E conventions (enforced — see the `playwright-e2e` skill):**
+- **Page Object Model** — all selectors live in `e2e/pages/`; specs never touch raw locators.
+- **All test data in fixtures** — static payloads in `e2e/fixtures/data/`; specs import the custom `test` from `e2e/fixtures/base.ts`, not `@playwright/test`.
+- **Run-scoped seed + teardown** — seeded users live in the `e2e+…@eventmate.test` namespace via the service-role client; teardown deletes the owning user and the DB cascade cleans the rest. Never seed or delete outside that namespace.
+- **Local-first** — Playwright's `webServer` boots `next dev`; tests run on localhost against the existing cloud Supabase (needs `NEXT_PUBLIC_SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`).
+- **Definition of done** — each feature phase ships E2E/API specs covering its ROADMAP success criteria before it's considered complete.
+
 ## Route Group Structure
 
 ```
