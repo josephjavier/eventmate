@@ -4,6 +4,8 @@
 
 EventMate is built in five vertical slices, each delivering a complete, user-facing capability. Phase 1 — the most critical — makes the app fully useful to a couple before a single platform supplier exists, solving the cold-start problem. Phase 2 unlocks the marketplace by onboarding suppliers through an invite-only admin panel. Phase 3 exposes those suppliers to clients through filtered discovery. Phase 4 adds the app's key differentiator: AI-powered inquiry with streaming responses and atomic booking confirmation. Phase 5 closes the loop with verified post-event reviews. All 75 v1 requirements map to exactly one phase.
 
+**Local-first build strategy:** Phases 1–5 are built and verified entirely on `localhost` (`next dev`) against the existing cloud Supabase project — no Vercel deployment required. A phase is "done" when it works locally and its tests pass. All Vercel/hosting/public-launch work is consolidated into the final **Phase 6: Cloud Deployment & Launch**, run only once the app is ready for real users. This keeps deployment friction out of the feature-building loop.
+
 ## Phases
 
 **Phase Numbering:**
@@ -17,6 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 3: Supplier Discovery** - Clients can browse and filter platform suppliers by category, location, price, and availability on their specific event date
 - [ ] **Phase 4: Inquiry, AI & Booking** - AI-powered streaming inquiry chat, supplier manual reply, atomic booking confirmation, and booking-related email notifications
 - [ ] **Phase 5: Reviews** - Verified post-event reviews gated to confirmed bookings, with supplier reply capability
+- [ ] **Phase 6: Cloud Deployment & Launch** - Deploy the locally-built app to Vercel, wire production env vars + Supabase Auth URLs, enable the keep-alive cron, and verify the full flow on the live URL — run only when the app is ready for real users
 
 ## Phase Details
 
@@ -37,7 +40,7 @@ Plans:
 - [x] 01-01-PLAN.md — Project scaffold, dependencies, Vitest harness (Wave 1)
 - [x] 01-02-PLAN.md — DB schema + RLS migration + schema push (Wave 2)
 - [x] 01-03-PLAN.md — Core library: Supabase clients, DAL, currency/token utils, middleware (Wave 3)
-- [~] 01-04-PLAN.md — Auth + onboarding + dashboard shell + Vercel deploy (closes skeleton) (Wave 4) [2 of 3 tasks done — awaiting Vercel deploy checkpoint]
+- [x] 01-04-PLAN.md — Auth + onboarding + dashboard shell (closes skeleton locally) (Wave 4) [keep-alive cron + vercel.json written; the Vercel deploy human-action moved to Phase 6 — Cloud Deployment & Launch]
 - [x] 01-05-PLAN.md — Checklist slice: PH template, custom items, offline supplier (Wave 5)
 - [x] 01-06-PLAN.md — Budget slice: centavos tracking, allocation, over-budget alert (Wave 5)
 - [x] 01-07-PLAN.md — File storage slice: private bucket, dropzone, signed URLs (Wave 5)
@@ -96,15 +99,30 @@ Plans:
 **Plans**: TBD
 **UI hint**: yes
 
+### Phase 6: Cloud Deployment & Launch
+**Goal**: The locally-built, fully-tested app is deployed to Vercel and serves the complete flow on a live public URL for real users
+**Mode:** mvp
+**Depends on**: Phases 1–5 (built and verified locally); run only when the app is ready for actual use
+**Requirements**: (infrastructure/launch — no new user-facing feature requirements; realizes the keep-alive mitigation T-1-09 and the DPA legal gate below in production)
+**Success Criteria** (what must be TRUE):
+  1. The app is deployed to Vercel with production environment variables set (Supabase URL/anon/service-role keys, site URL) — the service-role key is never `NEXT_PUBLIC_`
+  2. Supabase Auth URL configuration (Site URL + redirect URLs) points at the production domain so email confirmation and password-reset links work on the live site
+  3. The keep-alive cron runs on Vercel every 3 days, preventing the Supabase free-tier project from auto-pausing
+  4. The full end-to-end flow (signup → dashboard → onboarding → countdown, plus the core planning + supplier + booking flows) works on the live production URL
+  5. Pre-launch legal gate satisfied: privacy policy, terms of service, and signup consent are live before the first non-developer account is created (RA 10173)
+**Plans**: TBD (originates from the deferred 01-04 Task 3 deploy checkpoint)
+**UI hint**: no
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 (Phase 6 runs last, when ready for real users)
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Planning Tools | 8/8 (plan 09 deferred to v2) | Complete | 2026-06-19 |
+| 1. Foundation & Planning Tools | 8/8 (plan 09 deferred to v2) | Complete (local) | 2026-06-19 |
 | 2. Admin Panel & Supplier System | 0/TBD | Not started | - |
 | 3. Supplier Discovery | 0/TBD | Not started | - |
 | 4. Inquiry, AI & Booking | 0/TBD | Not started | - |
 | 5. Reviews | 0/TBD | Not started | - |
+| 6. Cloud Deployment & Launch | 0/TBD | Not started (run last) | - |

@@ -78,8 +78,8 @@ metrics:
 - `components/dashboard/SummaryWidgets.tsx`: checklist %, budget summary (total/committed/paid/remaining via `formatPHP`), RSVP counts.
 - `app/api/cron/keepalive/route.ts` + `vercel.json`: keep-alive cron every 3 days (Pitfall 7, T-1-09 mitigate).
 
-### Task 3: Deploy to Vercel (Checkpoint — Human Action)
-The keep-alive cron Route Handler and `vercel.json` are created. Deployment requires human action — see checkpoint below.
+### Task 3: Deploy to Vercel (Checkpoint — RELOCATED to Phase 6)
+The keep-alive cron Route Handler and `vercel.json` are created (committed code). The actual Vercel deploy, production env vars, Supabase Auth URL configuration, and live verification were **moved to Phase 6 (Cloud Deployment & Launch)** on 2026-07-02 under the local-first build strategy. Phase 1 is complete on localhost; this checkpoint no longer gates it.
 
 ## Commits
 
