@@ -32,21 +32,36 @@ export async function createEvent(formData: FormData) {
     return { error: "Wedding date is required" }
   }
 
-  // Insert the event
-  const { data: event, error: eventError } = await supabase
+  // Insert the event.
+  //
+  // NOTE: we do NOT chain `.select()` here. Chaining a select turns this into
+  // INSERT ... RETURNING, which re-reads the new row under the events SELECT policy
+  // `user_can_access_event(id)`. That helper is a STABLE SECURITY DEFINER function
+  // that sub-queries the events table, and it cannot see the row being inserted in
+  // the same statement — so RETURNING is denied and surfaces as
+  // "new row violates row-level security policy". Instead we insert (bare) and then
+  // read the id back in a SEPARATE statement, where the committed row is visible.
+  const { error: eventError } = await supabase.from("events").insert({
+    client_id: user.id,
+    title,
+    event_date,
+    event_time,
+    total_budget,
+  })
+
+  if (eventError) {
+    return { error: eventError.message }
+  }
+
+  // Separate read for the new event id (one active event per client — EVENT-01).
+  const { data: event, error: fetchError } = await supabase
     .from("events")
-    .insert({
-      client_id: user.id,
-      title,
-      event_date,
-      event_time,
-      total_budget,
-    })
     .select("id")
+    .eq("client_id", user.id)
     .single()
 
-  if (eventError || !event) {
-    return { error: eventError?.message ?? "Could not create event" }
+  if (fetchError || !event) {
+    return { error: fetchError?.message ?? "Could not load the created event" }
   }
 
   // Insert ceremony location (required — EVENT-02)
